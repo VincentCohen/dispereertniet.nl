@@ -38,46 +38,84 @@ function loadAnalytics() {
 })();
 
 // ── Map ───────────────────────────────────────────────────
+const LANG = window.location.pathname.startsWith('/uk') ? 'uk'
+           : window.location.pathname.startsWith('/en') ? 'en'
+           : 'nl';
+
+function t(nl, en, uk) { return LANG === 'uk' ? uk : LANG === 'en' ? en : nl; }
+
 const LOCATIONS = [
     {
         id: 'hoorn', name: 'Hoorn', lat: 52.6424, lng: 5.0601, type: 'persoonlijk',
-        year: '8 jan 1587',
-        body: 'Geboorteplaats van Jan Pieterszoon Coen. Hoorn was een van de welvarendste handelssteden van de Republiek en een van de oprichters van de VOC.'
+        year: t('8 jan 1587', '8 Jan 1587', '8 січ 1587'),
+        body: t(
+            'Geboorteplaats van Jan Pieterszoon Coen. Hoorn was een van de welvarendste handelssteden van de Republiek en een van de oprichters van de VOC.',
+            'Birthplace of Jan Pieterszoon Coen. Hoorn was one of the wealthiest trading cities of the Dutch Republic and one of the founding chambers of the VOC.',
+            'Місце народження Яна Пітерзона Куна. Горн був одним із найзаможніших торговельних міст Республіки та одним із засновників VOC.'
+        )
     },
     {
         id: 'rome', name: 'Rome', lat: 41.9028, lng: 12.4964, type: 'persoonlijk',
         year: '1601–1607',
-        body: 'Coen leerde het handelsvak bij het Italiaanse handelshuis van Paschalius Nanning. Hij verwierf kennis van boekhouden, handelsrecht en internationale koopmanspraktijk.'
+        body: t(
+            'Coen leerde het handelsvak bij het Italiaanse handelshuis van Paschalius Nanning. Hij verwierf kennis van boekhouden, handelsrecht en internationale koopmanspraktijk.',
+            'Coen learned the trade at the Italian merchant house of Paschalius Nanning, acquiring knowledge of bookkeeping, commercial law, and international commerce.',
+            'Кун навчався торговельній справі у торговому домі Пасхаліуса Нанніна, здобуваючи знання з бухгалтерії, торговельного права та міжнародної комерції.'
+        )
     },
     {
         id: 'amsterdam', name: 'Amsterdam', lat: 52.3676, lng: 4.9041, type: 'voc',
-        year: '1602 — heden',
-        body: 'Hoofdkantoor van de VOC en zetel van de Heren XVII. Coen schreef hen talloze brieven vanuit Azië. De aandelenbeurs van Amsterdam was de eerste ter wereld.'
+        year: t('1602 — heden', '1602 — present', '1602 — сьогодні'),
+        body: t(
+            'Hoofdkantoor van de VOC en zetel van de Heren XVII. Coen schreef hen talloze brieven vanuit Azië. De aandelenbeurs van Amsterdam was de eerste ter wereld.',
+            'Headquarters of the VOC and seat of the Heeren XVII. Coen sent them countless letters from Asia. The Amsterdam stock exchange was the first in the world.',
+            'Штаб-квартира VOC і резиденція Панів Сімнадцяти. Кун надсилав їм незліченні листи з Азії. Амстердамська фондова біржа була першою у світі.'
+        )
     },
     {
-        id: 'kaap', name: 'Kaap de Goede Hoop', lat: -34.3568, lng: 18.4735, type: 'voc',
-        year: 'doorvaart',
-        body: 'Alle VOC-schepen voeren via de Kaap. De reis van Amsterdam naar Batavia duurde zes tot negen maanden. De VOC stichtte hier later (1652) een verversingspost.'
+        id: 'kaap', name: t('Kaap de Goede Hoop', 'Cape of Good Hope', 'Мис Доброї Надії'), lat: -34.3568, lng: 18.4735, type: 'voc',
+        year: t('doorvaart', 'transit', 'транзит'),
+        body: t(
+            'Alle VOC-schepen voeren via de Kaap. De reis van Amsterdam naar Batavia duurde zes tot negen maanden. De VOC stichtte hier later (1652) een verversingspost.',
+            'All VOC ships passed via the Cape. The voyage from Amsterdam to Batavia took six to nine months. The VOC later established a resupply post here in 1652.',
+            'Усі кораблі VOC проходили через Мис. Подорож з Амстердама до Батавії тривала від шести до дев\'яти місяців. Пізніше (1652) VOC заснувала тут станцію постачання.'
+        )
     },
     {
         id: 'bantam', name: 'Bantam (Banten)', lat: -6.0366, lng: 106.1503, type: 'voc',
         year: '1607–1619',
-        body: 'Het eerste VOC-hoofdkwartier in Azië. Coen werkte hier als assistent en hoofdkoopman. Bantam was een machtig sultanaat en een van de grootste handelssteden van Azië.'
+        body: t(
+            'Het eerste VOC-hoofdkwartier in Azië. Coen werkte hier als assistent en hoofdkoopman. Bantam was een machtig sultanaat en een van de grootste handelssteden van Azië.',
+            'The first VOC headquarters in Asia. Coen served here as assistant and chief merchant. Bantam was a powerful sultanate and one of the largest trading cities in Asia.',
+            'Перша штаб-квартира VOC в Азії. Кун служив тут помічником і головним купцем. Бантам був потужним султанатом і одним із найбільших торговельних міст Азії.'
+        )
     },
     {
         id: 'batavia', name: 'Batavia (Jakarta)', lat: -6.2088, lng: 106.8456, type: 'stichting',
-        year: '30 mei 1619',
-        body: 'Coen brandde de stad Jayakarta plat en bouwde op de ruïnes Batavia — het centrum van het Nederlandse koloniale gezag voor drie eeuwen. De stad heet nu Jakarta.'
+        year: t('30 mei 1619', '30 May 1619', '30 тра 1619'),
+        body: t(
+            'Coen brandde de stad Jayakarta plat en bouwde op de ruïnes Batavia — het centrum van het Nederlandse koloniale gezag voor drie eeuwen. De stad heet nu Jakarta.',
+            'Coen burned the city of Jayakarta to the ground and built Batavia on its ruins — the centre of Dutch colonial authority for three centuries. The city is now known as Jakarta.',
+            'Кун спалив місто Джаяртку і збудував на руїнах Батавію — центр нідерландської колоніальної влади протягом трьох сторіч. Нині місто відоме як Джакарта.'
+        )
     },
     {
         id: 'ambon', name: 'Ambon', lat: -3.6954, lng: 128.1814, type: 'voc',
         year: '1623',
-        body: 'De "Amboyna-massacre": twintig Engelse en Japanse kooplieden werden geëxecuteerd wegens vermeende samenzwering. De episode vergiftigde de Engels-Nederlandse betrekkingen voor decennia.'
+        body: t(
+            'De "Amboyna-massacre": twintig Engelse en Japanse kooplieden werden geëxecuteerd wegens vermeende samenzwering. De episode vergiftigde de Engels-Nederlandse betrekkingen voor decennia.',
+            'The "Amboyna massacre": twenty English and Japanese merchants were executed on charges of conspiracy. The episode poisoned Anglo-Dutch relations for decades.',
+            '«Амбойнська різанина»: двадцять англійських та японських купців були страчені за звинуваченням у змові. Цей епізод отруїв англо-нідерландські відносини на десятиліття.'
+        )
     },
     {
-        id: 'banda', name: 'Banda-eilanden', lat: -4.5228, lng: 129.8945, type: 'banda',
-        year: 'mei–okt 1621',
-        body: 'Coen leidde een expeditie waarbij de Bandanese bevolking van ~15.000 mensen vrijwel geheel werd vernietigd. De enige productieplek van nootmuskaat ter wereld viel volledig in VOC-handen.'
+        id: 'banda', name: t('Banda-eilanden', 'Banda Islands', 'Острови Банда'), lat: -4.5228, lng: 129.8945, type: 'banda',
+        year: t('mei–okt 1621', 'May–Oct 1621', 'тра–жов 1621'),
+        body: t(
+            'Coen leidde een expeditie waarbij de Bandanese bevolking van ~15.000 mensen vrijwel geheel werd vernietigd. De enige productieplek van nootmuskaat ter wereld viel volledig in VOC-handen.',
+            'Coen led an expedition in which the Bandanese population of ~15,000 was almost entirely annihilated. The world\'s only source of nutmeg fell completely into VOC hands.',
+            'Кун очолив експедицію, під час якої населення Банди ~15 000 людей було майже повністю знищено. Єдине у світі місце вирощування мускатного горіха повністю перейшло під контроль VOC.'
+        )
     }
 ];
 
