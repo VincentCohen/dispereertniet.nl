@@ -269,7 +269,7 @@ section.active { display: block; }
 
 .hero-motto-text {
     font-family: 'IM Fell English', serif;
-    font-size: 1.05rem;
+    font-size: 1.25rem;
     font-style: italic;
     color: rgba(212,165,116,0.75);
     letter-spacing: 3px;
@@ -518,7 +518,7 @@ section > h2::after {
 
 .section-intro p {
     color: var(--text-body);
-    font-size: 1.05rem;
+    font-size: 1.25rem;
     line-height: 1.9;
     font-style: italic;
 }
@@ -647,7 +647,7 @@ section > h2::after {
 }
 
 .info-box p {
-    font-size: 0.95rem;
+    font-size: 1.25rem;
     color: var(--text-light);
     line-height: 1.8;
     margin: 0 !important;
@@ -739,7 +739,7 @@ section > h2::after {
 .stat-dark .stat-number { color: #e09090; }
 
 .stat-label {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
     color: var(--text-light);
     letter-spacing: 0.5px;
     line-height: 1.4;
@@ -758,7 +758,7 @@ section > h2::after {
     border-bottom: 1px solid rgba(212,165,116,0.12);
     color: var(--text-body);
     position: relative;
-    font-size: 0.97rem;
+    font-size: 1.05rem;
     line-height: 1.7;
 }
 
@@ -1417,7 +1417,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    body { font-size: 17px; }
+    body { font-size: 1.25rem; }
 
     .navbar .container {
         flex-direction: row;
