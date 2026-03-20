@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina niet gevonden — dispereertniet.nl</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=IM+Fell+English:ital@0;1&family=Lora&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: linear-gradient(160deg, #1a0a05 0%, #2c1810 50%, #1a0a05 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e8dcc8;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .wrap { max-width: 520px; }
+
+        .voc-ring {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            opacity: 0.5;
+        }
+
+        h1 {
+            font-family: 'IM Fell English', serif;
+            font-size: 5rem;
+            font-weight: 400;
+            color: #d4a574;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+            opacity: 0.6;
+        }
+
+        h2 {
+            font-family: 'IM Fell English', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #e8dcc8;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .rule {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d4a574, transparent);
+            margin: 1.2rem auto;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #9a8878;
+            line-height: 1.75;
+            margin-bottom: 2rem;
+        }
+
+        a {
+            display: inline-block;
+            font-family: 'Lora', serif;
+            font-size: 0.82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #d4a574;
+            border: 1px solid rgba(212,165,116,0.5);
+            padding: 0.7rem 1.8rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        a:hover {
+            background: rgba(212,165,116,0.1);
+            border-color: #d4a574;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <svg class="voc-ring" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="36" fill="none" stroke="#d4a574" stroke-width="1"/>
+            <circle cx="40" cy="40" r="28" fill="none" stroke="#d4a574" stroke-width="0.5" opacity="0.5"/>
+            <line x1="40" y1="4"  x2="40" y2="76" stroke="#d4a574" stroke-width="0.5" opacity="0.4"/>
+            <line x1="4"  y1="40" x2="76" y2="40" stroke="#d4a574" stroke-width="0.5" opacity="0.4"/>
+            <line x1="14" y1="14" x2="66" y2="66" stroke="#d4a574" stroke-width="0.4" opacity="0.25"/>
+            <line x1="66" y1="14" x2="14" y2="66" stroke="#d4a574" stroke-width="0.4" opacity="0.25"/>
+            <text x="40" y="45" text-anchor="middle" fill="#d4a574" font-family="serif" font-size="12" opacity="0.7">VOC</text>
+        </svg>
+
+        <h1>404</h1>
+        <h2>Pagina niet gevonden</h2>
+        <div class="rule"></div>
+        <p>Deze pagina bestaat niet — of is verloren gegaan in de vaart der volkeren.<br>Keer terug naar de hoofdpagina.</p>
+        <a href="/">Terug naar de website</a>
+    </div>
+</body>
+</html>
