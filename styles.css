@@ -963,7 +963,7 @@ section > h2::after {
     border-bottom: 1px solid rgba(212,165,116,0.1);
     color: var(--text-body);
     position: relative;
-    font-size: 0.97rem;
+    font-size: 1.05rem;
     line-height: 1.75;
 }
 
@@ -976,7 +976,7 @@ section > h2::after {
 }
 
 .reflection-box p {
-    font-size: 0.97rem;
+    font-size: 1.05rem;
     color: var(--text-body);
     line-height: 1.8;
 }
